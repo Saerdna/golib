@@ -5,10 +5,9 @@ import (
 	"os"
 )
 
-func LoadData(filename string, bufferCh chan string, callback func(string) error) error {
+func LoadData(filename string, callback func(string) error) error {
 	fp, err := os.Open(filename)
 	defer func() {
-		close(bufferCh)
 		fp.Close()
 	}()
 	if err != nil {
