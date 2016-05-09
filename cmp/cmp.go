@@ -21,3 +21,15 @@ func Compare(a, b []string) (more, less []string) {
 	less = FindMoreItem(b, a)
 	return
 }
+
+func DiffSliceString(a, b []string) bool {
+	item := FindMoreItem(a, b)
+	if len(item) != 0 {
+		return true
+	}
+	item = FindMoreItem(b, a)
+	if len(item) != 0 {
+		return true
+	}
+	return false
+}

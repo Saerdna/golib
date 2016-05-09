@@ -31,3 +31,17 @@ func TestTwo(t *testing.T) {
 		t.Errorf("more:%s:%s", morebuffer, ansmorebuffer)
 	}
 }
+
+func TestThree(t *testing.T) {
+
+	a := []string{"1", "2", "5", "-1"}
+	b := []string{"3", "2", "4"}
+	if DiffSliceString(a, b) != true {
+		t.Error("a b is diff!")
+	}
+	c := []string{"1", "2", "3"}
+	d := []string{"1", "2", "3"}
+	if DiffSliceString(c, d) != false {
+		t.Error("c d is same!")
+	}
+}
