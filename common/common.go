@@ -4,7 +4,7 @@ import (
 	"net"
 )
 
-func GetLocalIp() string {
+func GetLocalIP() string {
 	addrs, err := net.InterfaceAddrs()
 	if err != nil {
 		return "127.0.0.1"
